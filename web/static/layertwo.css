@@ -1,0 +1,10 @@
+/* html{background-color: black;} */
+body{background-color: black; max-height: 100vh;}
+#cdbody{background-color:#121212;  
+        border-bottom-left-radius: 2cm;
+        border-bottom-right-radius: 2cm;}
+
+#cdhead{background-color:#2d2d2d; box-shadow:1px 1px 2px #ed1cc4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;}
+
