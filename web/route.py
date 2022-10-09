@@ -1,7 +1,7 @@
 from web import app
 from flask import render_template, redirect, url_for
-from web.inputs import Inputs, pandcInputs
-from web.PyDMath import div,combination,permutation,fact
+from web.inputs import Inputs, pandcInputs, lcm_and_hcf
+from web.PyDMath import div,combination,permutation,fact,lcm
 
 @app.route('/')
 def home_page():
@@ -47,6 +47,7 @@ def combresult_pagec(res):
 @app.route('/combresultw/<string:res>')
 def combresult_pagew(res):
     return render_template('/results/combresultw.html',result=res)
+
 # Combination
 @app.route('/combination',methods=['GET', 'POST'])
 def comb_page():
@@ -87,3 +88,16 @@ def fact_page():
         else:
             return redirect(url_for('combresult_pagew',res='Positive values only'))
     return render_template('divisor.html',form=datas,head="Find Factorial")
+
+@app.route('/lcm_and_hcf',methods=['GET', 'POST'])
+def lcm_and_hcf_page():
+    datas = lcm_and_hcf()
+    if datas.validate_on_submit():
+        print(datas.values.data)
+        a = datas.values.data.split(' ')
+        if datas.submitL.data == True:
+            print(lcm(a))
+        elif datas.submitH.data == True:
+            print('HCF')
+
+    return render_template('lcmandhcf.html',form=datas,head="Find LCM and HCF",back=url_for('home_page'))
