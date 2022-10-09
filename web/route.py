@@ -1,7 +1,7 @@
 from web import app
 from flask import render_template, redirect, url_for
 from web.inputs import Inputs, pandcInputs, lcm_and_hcf
-from web.PyDMath import div,combination,permutation,fact,lcm
+from web.PyDMath import div,combination,permutation,fact,lcm,hcf
 
 @app.route('/')
 def home_page():
@@ -89,12 +89,19 @@ def fact_page():
             return redirect(url_for('combresult_pagew',res='Positive values only'))
     return render_template('divisor.html',form=datas,head="Find Factorial")
 
-@app.route('/r_lamc',defaults={'res':'Something went wrong'})
-@app.route('/r_lamc/<string:res>')
-def r_lamc(res):
-    return render_template('/results/overall_result.html',result=res,pat=url_for('lcm_and_hcf_page'))
 
+# Overall Results
+@app.route('/r_lcmc',defaults={'res':'Something went wrong'})
+@app.route('/r_lcmc/<string:res>')
+def r_lcmc(res):
+    return render_template('/results/overall_resultc.html',result=res,pat=url_for('lcm_and_hcf_page'))
 
+@app.route('/r_lcmw',defaults={'res':'Something went wrong'})
+@app.route('/r_lcmw/<string:res>')
+def r_lcmw(res):
+    return render_template('/results/overall_resultw.html',result=res,pat=url_for('lcm_and_hcf_page'))
+
+# LLCM and HCF
 @app.route('/lcm_and_hcf',methods=['GET', 'POST'])
 def lcm_and_hcf_page():
     datas = lcm_and_hcf()
@@ -107,10 +114,14 @@ def lcm_and_hcf_page():
         if datas.submitL.data == True:
             result = lcm(a)
             if isinstance(result,int) or isinstance(result,float):
-                return redirect(url_for('r_lamc',res=result))
+                return redirect(url_for('r_lcmc',res=result))
             else:
-                print('Dhamu')
+                return redirect(url_for('r_lcmw',res=result))
         elif datas.submitH.data == True:
-            print('HCF')
+            result = hcf(a)
+            if isinstance(result,int) or isinstance(result,float):
+                return redirect(url_for('r_lcmc',res=result))
+            else:
+                return redirect(url_for('r_lcmw',res=result))
 
     return render_template('lcmandhcf.html',form=datas,head="Find LCM and HCF",back=url_for('home_page'))

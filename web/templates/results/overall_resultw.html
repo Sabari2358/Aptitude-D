@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container " style="margin-top: 80px; ">
+    <div id="outerbox" style="border: 3px solid black;
+                        box-shadow:1px 1px 2px #ed1cc4;">
+        <div id="innerhead">
+            <h1 style="padding-top:20px;
+                        text-align: center;
+                        font-family: 'Play', sans-serif;
+                        color:#FF7900">Result
+            </h1>
+            <h3 style="padding-top:20px;
+                        text-align: center;
+                        font-family: 'Play', sans-serif;
+                        color:red">{{result}}</h3>
+            <br>
+            <br>
+            <br>
+            <a href="{{pat}}" style="text-decoration:none">
+                <button class="btn btn-lg btn-block btn-primary col-6 mx-auto" style="font-family: 'Chakra Petch', sans-serif;">
+                    <i class="bi-arrow-left-short"></i>Back</button></a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
