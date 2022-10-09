@@ -89,10 +89,10 @@ def fact_page():
             return redirect(url_for('combresult_pagew',res='Positive values only'))
     return render_template('divisor.html',form=datas,head="Find Factorial")
 
-@app.route('/overall',defaults={'pat':'Something went wrong'})
-@app.route('/overall')
-def overall():
-    return render_template('/results/overall_result.html',result='pat')
+@app.route('/r_lamc',defaults={'res':'Something went wrong'})
+@app.route('/r_lamc/<string:res>')
+def r_lamc(res):
+    return render_template('/results/overall_result.html',result=res,pat=url_for('lcm_and_hcf_page'))
 
 
 @app.route('/lcm_and_hcf',methods=['GET', 'POST'])
@@ -107,7 +107,7 @@ def lcm_and_hcf_page():
         if datas.submitL.data == True:
             result = lcm(a)
             if isinstance(result,int) or isinstance(result,float):
-                return redirect(url_for('overall'))
+                return redirect(url_for('r_lamc',res=result))
             else:
                 print('Dhamu')
         elif datas.submitH.data == True:
