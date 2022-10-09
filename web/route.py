@@ -25,7 +25,6 @@ def divisor_page():
         cap = details.number.data
         if cap > 1:
             obj1 = div(cap)
-            print(str(cap))
             obj = str(cap) + " " + obj1
             return redirect(url_for('result_pagec',res=obj))
         else:
@@ -106,7 +105,6 @@ def r_lcmw(res):
 def lcm_and_hcf_page():
     datas = lcm_and_hcf()
     if datas.validate_on_submit():
-        print(datas.values.data)
         try:
             a = datas.values.data.split(' ')
         except:
