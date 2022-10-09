@@ -108,7 +108,8 @@ def lcm_and_hcf_page():
         try:
             a = datas.values.data.split(' ')
         except:
-            a = 'Unexcepted Error'        
+            a = 'Unexcepted Error'      
+        print(a)  
         if datas.submitL.data == True:
             result = lcm(a)
             if isinstance(result,int) or isinstance(result,float):

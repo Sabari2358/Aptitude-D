@@ -4,6 +4,10 @@ import math
 def hcf(args):
     q = []
     if isinstance(args, list):
+        if args[-1]== '':
+            return "Don't leave space at last"
+        elif args[0]== '':
+            return "Don't leave space at first"
         for i in args:
             try:
                 q.append(int(i))
@@ -129,6 +133,10 @@ def lcm2(args):
 def lcm(lit):
     li = []
     if isinstance(lit, list):
+        if lit[-1]== '':
+            return "Don't leave space at last"
+        elif lit[0]== '':
+            return "Don't leave space at first"
         try:
             for i in lit:
                 li.append(int(i))
