@@ -11,12 +11,12 @@ def home_page():
 @app.route('/resultc',defaults={'res':'Something went wrong'})
 @app.route('/resultc/<string:res>')
 def result_pagec(res):
-    return render_template('resultc.html',result=res)
+    return render_template('/results/overall_resultc.html',result=res,pat=url_for('divisor_page'))
 
 @app.route('/resultw',defaults={'res':'Something went wrong'})
 @app.route('/resultw/<string:res>')
 def result_pagew(res):
-    return render_template('resultw.html',result=res)
+    return render_template('/results/overall_resultw.html',result=res,pat=url_for('divisor_page'))
 
 @app.route('/divisor',methods=['GET', 'POST'])
 def divisor_page():
@@ -40,12 +40,12 @@ def pandc_page():
 @app.route('/combresultc',defaults={'res':'Something went wrong'})
 @app.route('/combresultc/<string:res>')
 def combresult_pagec(res):
-    return render_template('/results/combresultc.html',result=res)
+    return render_template('/results/overall_resultc.html',result=res,pat=url_for('pandc_page'))
 
 @app.route('/combresultw',defaults={'res':'Something went wrong'})
 @app.route('/combresultw/<string:res>')
 def combresult_pagew(res):
-    return render_template('/results/combresultw.html',result=res)
+    return render_template('/results/overall_resultw.html',result=res,pat=url_for('pandc_page'))
 
 # Combination
 @app.route('/combination',methods=['GET', 'POST'])
@@ -100,7 +100,7 @@ def r_lcmc(res):
 def r_lcmw(res):
     return render_template('/results/overall_resultw.html',result=res,pat=url_for('lcm_and_hcf_page'))
 
-# LLCM and HCF
+# LCM and HCF
 @app.route('/lcm_and_hcf',methods=['GET', 'POST'])
 def lcm_and_hcf_page():
     datas = lcm_and_hcf()
