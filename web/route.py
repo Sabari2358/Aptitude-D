@@ -108,8 +108,7 @@ def lcm_and_hcf_page():
         try:
             a = datas.values.data.split(' ')
         except:
-            a = 'Unexcepted Error'      
-        print(a)  
+            a = 'Unexcepted Error'
         if datas.submitL.data == True:
             result = lcm(a)
             if isinstance(result,int) or isinstance(result,float):
@@ -129,4 +128,4 @@ def lcm_and_hcf_page():
 # Leap year and day finder page
 @app.route('/time')
 def time_page():
-    render_template('time.html')
+    return render_template('time.html')

@@ -16,6 +16,15 @@
 
             <br>
             {{form.submit(class="btn btn-lg btn-block btn-primary",style="font-family: 'Chakra Petch', sans-serif;")}}
-        </form>
+        </form><br>
+
+        <a href="{{url_for('home_page')}}" style="text-decoration:none; margin-bottom:-10cm;">
+            <button class="btn btn-lg btn-block btn-primary col-6 mx-auto" 
+                    style="font-family: 'Chakra Petch', sans-serif; 
+                    background-color: #FF8901; border-color: #FF8901;
+                    border-radius:10px">
+                <i class="bi-arrow-left-short"></i>Back</button></a>
+    
+        <div style="height:40px; width:100%;"></div>
     </div>
 {% endblock %}
