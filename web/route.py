@@ -124,3 +124,9 @@ def lcm_and_hcf_page():
                 return redirect(url_for('r_lcmw',res=result))
 
     return render_template('lcmandhcf.html',form=datas,head="Find LCM and HCF",back=url_for('home_page'))
+
+
+# Leap year and day finder page
+@app.route('/time')
+def time_page():
+    render_template('time.html')
