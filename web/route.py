@@ -132,6 +132,11 @@ def lcm_and_hcf_page():
 def time_page():
     return render_template('time.html')
 
+@app.route('/year_result',defaults={'res':'Something went wrong'})
+@app.route('/year_result/<string:res>')
+def year_resultc(res):
+    return render_template('results/overall_resultc.html',result=res,pat=url_for('year_page'))
+
 # Leap year or not
 @app.route('/findtheyear',methods=['GET', 'POST'])
 def year_page():
@@ -141,7 +146,7 @@ def year_page():
         obj = year()
         result = obj.leap_year(str(a).split('-')[0])
         print(result)
-        return redirect(url_for('home_page'))
+        return redirect(url_for('year_resultc',res=result))
     else:
         print('Noooooo')
     return render_template('year.html',form=years,head='Leap year or not',back=url_for('time_page'))
