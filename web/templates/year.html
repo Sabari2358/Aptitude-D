@@ -1,0 +1,28 @@
+{% extends 'layoutpandc.html'%}
+{% block content %}
+<div class="container" style="margin-top: 80px;">
+    <form method="POST" calss="form-register" 
+            style="background-color:#0f0f0f;
+                    padding:40px; border-radius:30px">
+        {{form.hidden_tag()}}
+        <h2 calss="h3 mb-3 font-weight-bold"
+            style="color:#ed1cc4; font-family: 'Chakra Petch', sans-serif;">
+                    <span><b>{{head}}</b></span></h2>
+        <br>
+        {{ form.year.label(class="form-label", style="color:#fb1192;font-family: 'Chakra Petch', sans-serif;")}}
+        {{ form.year(class="form-control", placeholder="Enter the year")}}
+
+        <br>
+        {{form.submit(class="btn btn-lg btn-block btn-primary",style="font-family: 'Chakra Petch', sans-serif;")}}
+    </form><br>
+
+    <a href="{{back}}" style="text-decoration:none; margin-bottom:-10cm;">
+        <button class="btn btn-lg btn-block btn-primary col-6 mx-auto" 
+                style="font-family: 'Chakra Petch', sans-serif; 
+                background-color: #FF8901; border-color: #FF8901;
+                border-radius:10px">
+            <i class="bi-arrow-left-short"></i>Back</button></a>
+
+    <div style="height:40px; width:100%;"></div>
+</div>
+{% endblock %}

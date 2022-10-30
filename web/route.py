@@ -1,7 +1,9 @@
 from web import app
 from flask import render_template, redirect, url_for
-from web.inputs import Inputs, pandcInputs, lcm_and_hcf
+from web.inputs import Inputs, pandcInputs, lcm_and_hcf, year_input
 from web.PyDMath import div,combination,permutation,fact,lcm,hcf
+from web import year
+# from PyDMath import year
 
 @app.route('/')
 def home_page():
@@ -129,3 +131,17 @@ def lcm_and_hcf_page():
 @app.route('/time')
 def time_page():
     return render_template('time.html')
+
+# Leap year or not
+@app.route('/findtheyear',methods=['GET', 'POST'])
+def year_page():
+    years = year_input()
+    if years.validate_on_submit():
+        a = years.year.data
+        obj = year()
+        result = obj.leap_year(str(a).split('-')[0])
+        print(result)
+        return redirect(url_for('home_page'))
+    else:
+        print('Noooooo')
+    return render_template('year.html',form=years,head='Leap year or not',back=url_for('time_page'))
