@@ -1,7 +1,9 @@
 from web import app
 from flask import render_template, redirect, url_for
-from web.inputs import Inputs, pandcInputs, lcm_and_hcf
+from web.inputs import Inputs, pandcInputs, lcm_and_hcf, year_input
 from web.PyDMath import div,combination,permutation,fact,lcm,hcf
+from web import year
+# from PyDMath import year
 
 @app.route('/')
 def home_page():
@@ -108,8 +110,7 @@ def lcm_and_hcf_page():
         try:
             a = datas.values.data.split(' ')
         except:
-            a = 'Unexcepted Error'      
-        print(a)  
+            a = 'Unexcepted Error'
         if datas.submitL.data == True:
             result = lcm(a)
             if isinstance(result,int) or isinstance(result,float):
@@ -124,3 +125,28 @@ def lcm_and_hcf_page():
                 return redirect(url_for('r_lcmw',res=result))
 
     return render_template('lcmandhcf.html',form=datas,head="Find LCM and HCF",back=url_for('home_page'))
+
+
+# Leap year and day finder page
+@app.route('/time')
+def time_page():
+    return render_template('time.html')
+
+@app.route('/year_result',defaults={'res':'Something went wrong'})
+@app.route('/year_result/<string:res>')
+def year_resultc(res):
+    return render_template('results/overall_resultc.html',result=res,pat=url_for('year_page'))
+
+# Leap year or not
+@app.route('/findtheyear',methods=['GET', 'POST'])
+def year_page():
+    years = year_input()
+    if years.validate_on_submit():
+        a = years.year.data
+        obj = year()
+        result = obj.leap_year(str(a).split('-')[0])
+        print(result)
+        return redirect(url_for('year_resultc',res=result))
+    else:
+        print('Noooooo')
+    return render_template('year.html',form=years,head='Leap year or not',back=url_for('time_page'))

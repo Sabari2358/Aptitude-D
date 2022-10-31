@@ -1,0 +1,59 @@
+{% extends 'layoutpandc.html' %}
+{% block content %}
+
+<div class="container" style="margin-top:.5cm;">
+    
+    <div class="card text-center" style="background-color:#121212; 
+                                border-radius:1cm; box-shadow:1px 1px 2px #ed1cc4">
+    <div class="card-header" id="cdhead" >
+      <ul class="nav nav-pills card-header-pills" style="font-family: 'Chakra Petch', sans-serif;">
+        <li class="nav-item">
+          <a class="nav-link" href="#" target="_blank" 
+                    style="color:#00e0d1; font-size:20px"><u>More details</u></a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body" id="cdbody" style="border-bottom-left-radius: 2cm;">
+      <h5 class="card-title" style="font-family: 'Acme', sans-serif; 
+                                font-size:30px; color:#FF8901">Leap year or not</h5>
+      <p class="card-text" style="color:#e3e3e3;
+                            font-family: 'Kalam', cursive; font-size:20px;">
+                                A year, occurring once every four years, which has 366 days 
+                                including 29 February as an intercalary day.</p>
+      <a href="{{url_for('year_page')}}" class="btn btn-primary" style="font-family: 'Chakra Petch', sans-serif;">Calculate   <i class="bi-calculator-fill"></i></a>
+    </div>
+  </div>
+  <br>
+  <div class="card text-center" style="background-color:#121212; border-radius:1cm;
+                                        box-shadow:1px 1px 2px #ed1cc4">
+    <div class="card-header" id="cdhead" >
+      <ul class="nav nav-pills card-header-pills" style="font-family: 'Chakra Petch', sans-serif;">
+        <li class="nav-item">
+          <a class="nav-link" href="#" target="_blank" 
+                    style="color:#00e0d1; font-size:20px"><u>More details</u></a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body" id="cdbody">
+      <h5 class="card-title" style="font-family: 'Acme', sans-serif; 
+                                font-size:30px; color:#FF8901">Find the day</h5>
+      <p class="card-text" style="color:#e3e3e3;
+                            font-family: 'Kalam', cursive; font-size:20px">
+                            It is used to find the day from the given date as input.</p>
+      <a href="{{url_for('per_page')}}" class="btn btn-primary" style="font-family: 'Chakra Petch', sans-serif;">Calculate   <i class="bi-calculator-fill"></i></a>
+    </div>
+  </div>
+<br>
+
+    <a href="{{url_for('home_page')}}" style="text-decoration:none; margin-bottom:-10cm;">
+        <button class="btn btn-lg btn-block btn-primary col-6 mx-auto" 
+                style="font-family: 'Chakra Petch', sans-serif; 
+                background-color: #FF8901; border-color: #FF8901;
+                border-radius:10px">
+            <i class="bi-arrow-left-short"></i>Back</button></a>
+
+    <div style="height:40px; width:100%;"></div>
+
+  </div>
+  
+{% endblock %}
