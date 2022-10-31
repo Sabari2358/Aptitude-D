@@ -1,6 +1,6 @@
 from web import app
 from flask import render_template, redirect, url_for
-from web.inputs import Inputs, pandcInputs, lcm_and_hcf, year_input
+from web.inputs import Inputs, pandcInputs, lcm_and_hcf, year_input,date_input
 from web.PyDMath import div,combination,permutation,fact,lcm,hcf
 from web import year
 # from PyDMath import year
@@ -150,3 +150,12 @@ def year_page():
     else:
         print('Noooooo')
     return render_template('year.html',form=years,head='Leap year or not',back=url_for('time_page'))
+
+# Find the day
+@app.route('/findtheday',methods=['GET','POST'])
+def day_page():
+    form = date_input()
+    if form.validate_on_submit():
+        date = form.date.data
+        print(date)
+    return render_template('day.html',form=form,head='Find the date',back=url_for('time_page'))
