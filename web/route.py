@@ -9,6 +9,8 @@ from web import year
 def home_page():
     return render_template('home.html')
 
+
+# ======================================================================
 #  Divisor and Divisor results
 @app.route('/resultc',defaults={'res':'Something went wrong'})
 @app.route('/resultc/<string:res>')
@@ -34,7 +36,8 @@ def divisor_page():
     return render_template('divisor.html',form=details,head="Find Divisor")
 
 
-# Permutation and combination
+# ======================================================================
+# Permutation and combination result
 @app.route('/pandc')
 def pandc_page():
     return render_template('pandc.html')
@@ -49,6 +52,7 @@ def combresult_pagec(res):
 def combresult_pagew(res):
     return render_template('/results/overall_resultw.html',result=res,pat=url_for('pandc_page'))
 
+# ======================================================================
 # Combination
 @app.route('/combination',methods=['GET', 'POST'])
 def comb_page():
@@ -63,6 +67,8 @@ def comb_page():
         else:
             return redirect(url_for('combresult_pagew',res='Positive values only allowed'))
     return render_template('combination.html',form=datas,head="Find Combination")
+
+# ======================================================================
 # Permutation
 @app.route('/permutation',methods=['GET', 'POST'])
 def per_page():
@@ -77,6 +83,8 @@ def per_page():
         else:
             return redirect(url_for('combresult_pagew',res='Positive values only allowed'))
     return render_template('combination.html',form=datas,head="Find Permutation")
+
+# ======================================================================
 # Factorial
 @app.route('/factorial',methods=['GET', 'POST'])
 def fact_page():
@@ -91,7 +99,8 @@ def fact_page():
     return render_template('divisor.html',form=datas,head="Find Factorial")
 
 
-# Overall Results
+# ======================================================================
+# LCM Results
 @app.route('/r_lcmc',defaults={'res':'Something went wrong'})
 @app.route('/r_lcmc/<string:res>')
 def r_lcmc(res):
@@ -126,7 +135,7 @@ def lcm_and_hcf_page():
 
     return render_template('lcmandhcf.html',form=datas,head="Find LCM and HCF",back=url_for('home_page'))
 
-
+# ======================================================================
 # Leap year and day finder page
 @app.route('/time')
 def time_page():
@@ -151,11 +160,34 @@ def year_page():
         print('Noooooo')
     return render_template('year.html',form=years,head='Leap year or not',back=url_for('time_page'))
 
+# ======================================================================
 # Find the day
+@app.route('/day_resultc',defaults={'res':'Something went wrong'})
+@app.route('/day_resultc/<string:res>')
+def day_resultc(res):
+    return render_template('results/overall_resultc.html',result=res,pat=url_for('day_page'))
+
+
+# Not used ---------------------------------
+@app.route('/day_resultw',defaults={'res':'Something went wrong'})
+@app.route('/day_resultw/<string:res>')
+def day_resultw(res):
+    return render_template('results/overall_resultc.html',result=res,pat=url_for('day_page'))
+# Not used ---------------------------------
+
+
 @app.route('/findtheday',methods=['GET','POST'])
 def day_page():
     form = date_input()
     if form.validate_on_submit():
-        date = form.date.data
-        print(date)
+        date = str(form.date.data)
+        splited = date.split('-')
+        obj = year()
+        result = obj.find_day(splited[2],splited[1],splited[0])
+        print(result)
+        return redirect(url_for('day_resultc',res=result))
+
     return render_template('day.html',form=form,head='Find the date',back=url_for('time_page'))
+
+
+# ======================================================================

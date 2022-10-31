@@ -20,5 +20,5 @@ class year_input(FlaskForm):
     submit = SubmitField(label = 'Find')
 
 class date_input(FlaskForm):
-    date = DateField(label='Enter the date',validators=[validators.DataRequired()])
-    submit = SubmitField(label='Find the day')
+    date = DateField(label='Enter the day',validators=[validators.DataRequired()])
+    submit = SubmitField(label='Find')
