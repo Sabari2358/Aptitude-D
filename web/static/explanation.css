@@ -1,9 +1,9 @@
 #boxbody{
     margin-top: 50px;
-
+    padding-bottom: 30px;
 }
 
-#heading{
+.heading{
     color:#BF009E;
     font-family: 'Play', sans-serif;
 }
@@ -15,3 +15,5 @@
 }
 
 .points{height:30px;width: 30px;}
+
+
