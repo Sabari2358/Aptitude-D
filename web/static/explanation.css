@@ -1,5 +1,6 @@
 #boxbody{
     margin-top: 50px;
+
 }
 
 #heading{
@@ -7,4 +8,10 @@
     font-family: 'Play', sans-serif;
 }
 
-#content{color:aliceblue}
+.content{
+    color:aliceblue; 
+    font-family: 'Quantico', sans-serif;
+    font-size:20px;
+}
+
+.points{height:30px;width: 30px;}
