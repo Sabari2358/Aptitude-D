@@ -150,6 +150,11 @@ def time_page():
 def year_resultc(res):
     return render_template('results/lyear_exp_res.html',result=res,pat=url_for('year_page'))
 
+# Learn more 
+@app.route('/learn_year')
+def yeap_exp_page():
+    return render_template('explanation/leapyear.html')  
+
 # Leap year or not calculation
 @app.route('/findtheyear',methods=['GET', 'POST'])
 def year_page():
