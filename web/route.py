@@ -137,16 +137,20 @@ def lcm_and_hcf_page():
 
 # ======================================================================
 # Leap year and day finder page
+# ======================================================================
+
+# common template display
 @app.route('/time')
 def time_page():
     return render_template('time.html')
 
+# Result for leap year or not
 @app.route('/year_result',defaults={'res':'Something went wrong'})
 @app.route('/year_result/<string:res>')
 def year_resultc(res):
     return render_template('results/lyear_exp_res.html',result=res,pat=url_for('year_page'))
 
-# Leap year or not
+# Leap year or not calculation
 @app.route('/findtheyear',methods=['GET', 'POST'])
 def year_page():
     years = year_input()
