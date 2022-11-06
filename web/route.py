@@ -145,10 +145,12 @@ def time_page():
     return render_template('time.html')
 
 # Result for leap year or not
-@app.route('/year_result',defaults={'res':'Something went wrong'})
-@app.route('/year_result/<string:res>')
-def year_resultc(res):
-    return render_template('results/lyear_exp_res.html',result=res,pat=url_for('year_page'))
+@app.route('/year_result',defaults={'res':'Something went wrong','y':'Something went wrong','so':'Something went wrong','st':'Something went wrong'})
+@app.route('/year_result/<string:res>/<string:y>/<string:so>/<string:st>')
+def year_resultc(res,y,so,st):
+    return render_template('results/lyear_exp_res.html',
+                            result=res,
+                            pat=url_for('year_page'),year=y,stepo=so,stept=st)
 
 # Learn more 
 @app.route('/learn_year')
@@ -162,12 +164,14 @@ def year_page():
     if years.validate_on_submit():
         a = years.year.data
         obj = year()
-        result = obj.leap_year(str(a).split('-')[0])
+        hundred,fourhd,result = obj.leap_year(str(a).split('-')[0])
         print(result)
-        return redirect(url_for('year_resultc',res=result))
+        return redirect(url_for('year_resultc',res=result,y=a,so=hundred,st=fourhd))
     else:
         print('Noooooo')
-    return render_template('year.html',form=years,head='Leap year or not',back=url_for('time_page'))
+    return render_template('year.html',form=years,
+                            head='Leap year or not',
+                            back=url_for('time_page'))
 
 # ======================================================================
 # Find the day
