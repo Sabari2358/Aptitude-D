@@ -6,6 +6,7 @@ class Inputs(FlaskForm):
     number = IntegerField(label = 'Number',validators=[validators.DataRequired()])
     submit = SubmitField(label = 'Find')
 
+# Permutation and combination input
 class pandcInputs(FlaskForm):
     numbern = IntegerField(label = 'n (objects)',validators=[validators.DataRequired()])
     numberr = IntegerField(label = 'r (sample)',validators=[validators.DataRequired()])
