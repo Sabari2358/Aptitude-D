@@ -23,6 +23,7 @@ class year_input(FlaskForm):
     year = IntegerField(label='Year',validators=[validators.DataRequired()])
     submit = SubmitField(label = 'Find')
 
+# date input
 class date_input(FlaskForm):
     date = DateField(label='Enter the day',validators=[validators.DataRequired()])
     submit = SubmitField(label='Find')
