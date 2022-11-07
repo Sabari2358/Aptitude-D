@@ -18,6 +18,7 @@ class lcm_and_hcf(FlaskForm):
     submitL = SubmitField(label = 'Find LCM')
     submitH = SubmitField(label = 'Find HCF')
 
+# year input 
 class year_input(FlaskForm):
     year = IntegerField(label='Year',validators=[validators.DataRequired()])
     submit = SubmitField(label = 'Find')
