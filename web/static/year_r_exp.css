@@ -36,6 +36,7 @@
                      -3px -3px 3px #ed1cc4;
         }
 }
+
 @media screen and (min-width:450px){
     .rhead{ color:#FF7900;
         padding-left:10%;font-size: 25px;
@@ -48,6 +49,7 @@
     .r_det_content{color:rgb(6, 51, 254);text-decoration: underline;
                     padding-left:43%;font-size: 20px;}
 }
+
 @media screen and (min-width:550px){
     .rhead{ color:#FF7900;
         padding-left:19%;font-size: 30px;
@@ -60,6 +62,7 @@
     .r_det_content{color:rgb(6, 51, 254);text-decoration: underline;
                     padding-left:44%;font-size: 20px;}
 }
+
 @media screen and (min-width:770px){
     .rhead{ color:#FF7900;
         padding-left:28%;font-size: 30px;
@@ -72,6 +75,7 @@
     .r_det_content{color:rgb(6, 51, 254);text-decoration: underline;
                     padding-left:44%;font-size: 20px;}
 }
+
 @media screen and (min-width:990px){
     .rhead{ color:#FF7900;
         padding-left:33%;font-size: 30px;
@@ -84,6 +88,7 @@
     .r_det_content{color:rgb(6, 51, 254);text-decoration: underline;
                     padding-left:44%;font-size: 20px;}
 }
+
 @media screen and (min-width:1180px){
     .rhead{ color:#FF7900;
         padding-left:34%;font-size: 30px;
