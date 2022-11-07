@@ -12,6 +12,7 @@ class pandcInputs(FlaskForm):
     numberr = IntegerField(label = 'r (sample)',validators=[validators.DataRequired()])
     submit = SubmitField(label = 'Find')
 
+# LCM and HCF inputs
 class lcm_and_hcf(FlaskForm):
     values = StringField(label = 'Enter values seperated by space',validators=[validators.DataRequired()])
     submitL = SubmitField(label = 'Find LCM')
