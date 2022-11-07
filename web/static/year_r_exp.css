@@ -1,0 +1,10 @@
+#exp{margin-top: 100px;}
+
+@media screen and (min-width:100px){
+    .rhead{ color:#FF7900;
+        padding-left:20%;
+    }
+    .r_q_content{color:red}
+    .r_ans_content{color:rgb(0, 214, 0);}
+    .r_det_content{color:rgb(6, 51, 254);text-decoration: underline;}
+}
