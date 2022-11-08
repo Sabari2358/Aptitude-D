@@ -3,6 +3,26 @@
     padding-bottom: 30px;
 }
 
+@media screen and (min-width:350px){
+    .heading{
+        font-size: 25px;
+    }
+    .content{
+        font-size: 15px;
+    }
+}
+@media screen and (min-width:750px){
+    .heading{
+        font-size: 28px;
+    }
+    .content{
+        font-size: 18px;
+    }
+}
+ul li::before {
+    content: "\2022"; 
+    color:red;
+}
 .heading{
     color:#BF009E;
     font-family: 'Play', sans-serif;
@@ -11,7 +31,6 @@
 .content{
     color:aliceblue; 
     font-family: 'Quantico', sans-serif;
-    font-size:20px;
 }
 
 .points{height:30px;width: 30px;}
