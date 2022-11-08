@@ -1,0 +1,89 @@
+{% extends 'layout.html'%}
+{% block content %}
+<div class="container" id="boxbody">
+    <h2 class="heading">About the calendar</h2>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        Now we are using the calendar called Gregorian calendar, 
+        first established in 1582 by <b>Pope Gregory XIII</b>. This calendar 
+        was designed to correct the errors introduced by the less 
+        accurate Julian calendar. </p>
+    <br>
+
+    <h2 class="heading">How to calculate leap year or not?</h2>
+    <ul>
+        <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF8901" d="M47.2,-0.4C47.2,27.3,23.6,54.5,2.6,54.5C-18.5,54.5,-36.9,27.3,-36.9,-0.4C-36.9,-28,-18.5,-56,2.6,-56C23.6,-56,47.2,-28,47.2,-0.4Z" transform="translate(100 100)" />
+          </svg>Check weather the year is divisible by 100.
+        </li>
+        <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF8901" d="M47.2,-0.4C47.2,27.3,23.6,54.5,2.6,54.5C-18.5,54.5,-36.9,27.3,-36.9,-0.4C-36.9,-28,-18.5,-56,2.6,-56C23.6,-56,47.2,-28,47.2,-0.4Z" transform="translate(100 100)" />
+          </svg>If it is divisible by 100.</li>
+        <ul>    
+            <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FF0066" d="M49.9,-2.1C49.9,14.4,25,28.8,6.2,28.8C-12.7,28.8,-25.3,14.4,-25.3,-2.1C-25.3,-18.5,-12.7,-37.1,6.2,-37.1C25,-37.1,49.9,-18.5,49.9,-2.1Z" transform="translate(100 100)" />
+              </svg>If it is divisible by 400 then it is a leap year.</li>
+            <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FF0066" d="M49.9,-2.1C49.9,14.4,25,28.8,6.2,28.8C-12.7,28.8,-25.3,14.4,-25.3,-2.1C-25.3,-18.5,-12.7,-37.1,6.2,-37.1C25,-37.1,49.9,-18.5,49.9,-2.1Z" transform="translate(100 100)" />
+              </svg>If it is not divisible by 400 then it is not a leap year.</li>
+          </ul>        
+        <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#FF8901" d="M47.2,-0.4C47.2,27.3,23.6,54.5,2.6,54.5C-18.5,54.5,-36.9,27.3,-36.9,-0.4C-36.9,-28,-18.5,-56,2.6,-56C23.6,-56,47.2,-28,47.2,-0.4Z" transform="translate(100 100)" />
+          </svg>If it is not divisible by 100.</li>
+          <ul>
+            <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FF0066" d="M49.9,-2.1C49.9,14.4,25,28.8,6.2,28.8C-12.7,28.8,-25.3,14.4,-25.3,-2.1C-25.3,-18.5,-12.7,-37.1,6.2,-37.1C25,-37.1,49.9,-18.5,49.9,-2.1Z" transform="translate(100 100)" />
+              </svg>If, it is divisible by 4. Then, it is a leap year.</li>
+            <li style="display: block;" class="content"><svg class="points" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#FF0066" d="M49.9,-2.1C49.9,14.4,25,28.8,6.2,28.8C-12.7,28.8,-25.3,14.4,-25.3,-2.1C-25.3,-18.5,-12.7,-37.1,6.2,-37.1C25,-37.1,49.9,-18.5,49.9,-2.1Z" transform="translate(100 100)" />
+              </svg>If it is not divisible by 4 then it is not a leap year.</li>
+          </ul> 
+    </ul>
+    <br>
+
+    <h2  class="heading">Example calculation :</h2>
+    <p class="content" style="color:red">&#160;&#160;&#160;&#160;&#160;&#160;
+        Q 1: Find the year <b>1996</b> is leap year or not?</p>
+    <p class="content" style="color:rgb(0, 214, 0)">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 1: &#160;1996 / 100 = Not divisible</p>
+    <p class="content" style="color:rgb(0, 214, 0)">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 2: &#160;1996 / 4 = Divisible</p>
+    <p class="content" style="color:rgb(0, 214, 0)">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 3: &#160;<b>It is a leap year</b></p>
+    
+        <p class="content" style="color:red">&#160;&#160;&#160;&#160;&#160;&#160;
+        Q 2: Find the year <b>2100</b> is leap year or not?</p>
+    <p class="content" style="color:rgb(0, 214, 0)">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 1: &#160;1996 / 100 = Divisible</p>
+    <p class="content" style="color:rgb(0, 214, 0)">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 2: &#160;1996 / 400 = Not divisible</p>
+    <p class="content" style="color:rgb(0, 214, 0)">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 3: &#160;<b>It is not a leap year</b></p>
+    <br>
+
+    <h2 class="heading">Brief Summary</h2>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        In the Gregorian calendar, a normal year consists of 365 days. 
+        Because the actual length of a sidereal year (the time required 
+        for the Earth to revolve once about the Sun) is actually 365.2425 
+        days, a "leap year" of 366 days is used once every four years to 
+        eliminate the error caused by three normal (but short) years. Any 
+        year that is evenly divisible by 4 is a leap year: for example, 
+        1988, 1992, and 1996 are leap years.</p>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        However, there is still a small error that must be accounted for. 
+        To eliminate this error, the Gregorian calendar stipulates that a year 
+        that is evenly divisible by 100 (for example, 1900) is a leap year only 
+        if it is also evenly divisible by 400.</p>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        For this reason, the following years are not leap years:</p>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        1700, 1800, 1900, 2100, 2200, 2300, 2500, 2600</p>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        This is because they are evenly divisible by 100 but not by 400.</p>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        The following years are leap years: 1600, 2000, 2400</p>
+    <p class="content">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        This is because they are evenly divisible by both 100 and 400.</p>
+    <br>    
+</div>
+{% endblock %}

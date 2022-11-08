@@ -13,7 +13,7 @@
             <h3 style="padding-top:20px;
                         text-align: center;
                         font-family: 'Play', sans-serif;
-                        color:#04f38f">{{result}}</h23>
+                        color:rgb(0, 214, 0)">{{result}}</h23>
             <br>
             <br>
             <br><br>
@@ -23,20 +23,27 @@
         </div>
     </div>
 </div>
+
 <br>
-<!-- <div class="container " style="margin-top: 80px;">
-<div class="container" id="outerbox" style="margin-top:2.8cm;
-                                        border: 3px solid #0f0f0f;
-                                        box-shadow:1px 1px 2px #ed1cc4">
-    <div class="innerhead">
-        <h3 style="padding-top:20px;
-                        text-align: center;
-                        font-family: 'Play', sans-serif;
-                        color:#FF7900";font-size:2cm>Explanation
-        </h3>
-    </div>
+
+
+<div class="container" id="exp">
+    <h2 class="heading rhead" style="padding-top:15px">Explanation :</h2>
+    <p class="content r_q_content">&#160;&#160;&#160;&#160;&#160;&#160;
+        Q : Is {{year}} a leap year?</p>
+    <p class="content r_ans_content">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 1 : {{stepo}}</p>
+    <p class="content r_ans_content">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 2 : {{stept}}</p>
+    <p class="content r_ans_content">&#160;&#160;&#160;&#160;&#160;&#160;
+        &#160;&#160;&#160;&#160;Step 3 : {{result}}</p>
+    
+    <h4 class="content r_det_content">
+        <a href="{{url_for('yeap_exp_page')}}">Know More</a>
+    </h4>
+    <br>
 </div>
-</div> -->
+>>>>>>> 4c1a8e93ab19e0878340fa6a7c7fca78b8e417fd
 
 
 {% endblock %}

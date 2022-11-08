@@ -8,15 +8,21 @@ class year:
         y = self.cvt_int(a)
         if isinstance(y,int):
             if y%100 == 0:
+                yield f'{a} divided by 100'
                 if y%400 == 0:
-                    return 'Leap year'
+                    yield f'{a} divided by 400'
+                    yield 'Leap year'
                 else:
-                    return 'Not a leap year'
+                    yield f'{a} not divided by 400'
+                    yield 'Not a leap year'
             else:
+                yield f'{a} not divided by 100'
                 if y%4 == 0:
-                    return 'Leap year'
+                    yield f'{a} divided by 4'
+                    yield 'Leap year'
                 else:
-                    return 'Not a leap year'
+                    yield f'{a} not divided by 4'
+                    yield 'Not a leap year'
         else:
             return y
     

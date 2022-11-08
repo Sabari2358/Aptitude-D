@@ -1,0 +1,17 @@
+#boxbody{
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.heading{
+    color:#BF009E;
+    font-family: 'Play', sans-serif;
+}
+
+.content{
+    color:aliceblue; 
+    font-family: 'Quantico', sans-serif;
+    font-size:20px;
+}
+
+.points{height:30px;width: 30px;}
