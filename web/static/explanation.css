@@ -19,9 +19,16 @@
         font-size: 18px;
     }
 }
-ul li::before {
-    content: "\2022"; 
-    color:red;
+.out::before{
+    content: "\1F846"; 
+
+    color:#ff9419;
+}
+.in::before{
+    content: "\1F846"; 
+    content: "\1F89A"; 
+
+    color:#f407cc;
 }
 .heading{
     color:#BF009E;
